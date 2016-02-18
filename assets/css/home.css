@@ -1,41 +1,76 @@
-header {
-	font-family: Impact;
-	font-size: 30px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: bold;
-	line-height: 50.4px;
+body {
+	margin: 0px;
+	height: 768px;
+	background-image: url(../images/homeBG.png);
+	background-size: 100%;
+}
+
+#basicView {
+	position: absolute;
+	margin: 0px
+	width: 100%;
+	height: 800px;
 }
 
 nav {
-	padding-left: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background-color: black;
-
+	position: fixed;
+	align-content: center;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	height: 100px;
+	width: 100%;
+	background-color: rgba(10,10,10,0.9);
 }
 
-.navButtons {
-	left: 100px;
+#logoImage {
+	height: 100px;
+	float: left;
+}
+
+#menuBar {
+	height: 100%;
+	float: left;
+	left: 0px;
+	right: 0px;
+}
+
+.menuButtons {
 	background-color: transparent;
+	height: 100%;
 	border: 0px;
-	font-size: 20px;
+	font-size: 30px;
 	color: #ABABAB;
 	outline: 0px;
 	font-family: Copperplate;
-} 
+}
 
-.navButtons:hover {
+.menuButtons:hover {
 	color: white;
 }
 
-#bodyDiv {
-
-	height: 1000px;
+#bodyContainer {
 	width: 100%;
-	background-color: ye
+	height: 700px;
 }
 
-body {
+#homeText {
 	margin: 0px;
+	color: black;
+	position: relative;
+	padding-left : 700px;
+	padding-right: 20px;
+	top: 200px;
+	text-shadow: 2px 0px white, -2px 0px white, 0px 2px white, 0px -2px white;
+	font-family: Brush Script MT;
+	font-size: 40px;
+}
+
+footer {
+	position: fixed;
+	background-color: rgba(10,10,10,0.5);
+	color: white;
+	height: 50px;
+	width: 100%;
+	bottom: 0px;
 }
