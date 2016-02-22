@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Music concert registration">
+    <meta name="keywords" content="Concert">
 	<title>Home</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/commonStyles.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/home.css">
 	<script src="javascript/home.js"></script>
 </head>
 
 <body>
 	<div id="basicView">
-        <div style="height: 100px">
+        <header>
         	<nav>
         		<img id="logoImage" src="assets/images/logo.png">
         			
         		<div id="menuBar">
-        			<button class="menuButtons" style="color: white">Home</button>
-        			<button class="menuButtons" id="registerButton" onclick="registerButtonPressed()">Register</button>
+                    <a href="" class="menuLinks" style="color: white;">Home</a>
+                    &nbsp &nbsp &nbsp
+                    <a href="html/registration.html" class="menuLinks">Register</a>
         		</div>
         		
         	</nav>
-        </div>
+        </header>
     	<div id="bodyContainer">
-            <div id="innerdiv">
-                <p id="homeText">
-                    " Music... will help dissolve your perplexities and purify your character and sensibilities, and in time of care and sorrow, will keep a fountain of joy alive in you."
-                </p>            
-            </div>
+            <p id="homeText">
+                " Music... will help dissolve your perplexities and purify your character and sensibilities, and in time of care and sorrow, will keep a fountain of joy alive in you."
+            </p>   
         </div>
         <footer>
-            <label>Contact us</label>
-         </footer>
+            <a href="">Contact us</a>
+        </footer>
         
 
 	</div>
