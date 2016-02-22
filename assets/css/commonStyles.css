@@ -1,3 +1,8 @@
+body {
+	margin: 0px;
+	background-image: url(../images/BGimage.png);
+}
+
 header {
 	margin: 0px;
 	width: 100%;
@@ -23,27 +28,27 @@ nav {
 #menuBar {
 	height: 100%;
 	float: left;
-	left: 0px;
-	right: 0px;
+	
+
 }
 
 .menuLinks {
 	font-size: 30px;
-	color: #ABABAB;
+	color: #9c9c9c;
 	text-decoration: none;
 	line-height: 70px;
 	font-family: Copperplate;
-    padding-left: 10px;
-    padding-right: 10px;
+	padding: 16px 10px;
 }
 
 .menuLinks:hover {
 	color: white;
+	
 }
 
 footer {
-	position: fixed;
-	background-color: rgba(10,10,10,0.5);
+	/*position: relative;*/
+	background-color: rgba(10,10,10,0.9);
 	color: white;
 	height: 50px;
 	width: 100%;

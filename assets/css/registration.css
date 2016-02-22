@@ -1,0 +1,57 @@
+#registrationTable {
+	width: 600px;
+	margin: 30px 0px;
+	border-radius: 10px;
+	background-color: rgba(10,10,10,0.6);
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+}
+
+td {
+	padding: 10px 5px;
+}
+
+.registrationTextFields {
+	font-size: 15px;
+	height: 30px;
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+}
+
+.genderRadio {
+    width: 32.5%;
+    float: left;
+    
+}
+
+.addressFieldColumns {
+    padding: 2px 5px;
+}
+
+.birthdayPicker {
+	width: 32.4%;
+    background-color: transparent;
+	height: 35px;
+    color: white;
+    font-size: 15px;
+}
+
+
+#submitButton {
+	font-size: 19px;
+    font-weight: bold;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+     background: linear-gradient(#646464, #0e0e0e);
+    border-radius: 5px;
+    letter-spacing: 1px;
+    border-width: 0.1px;
+    outline: 0px;
+
+}
