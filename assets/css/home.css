@@ -4,14 +4,12 @@
 }
 
 #homeText {
-    /*height: 100%;*/
 	float: right;
 	margin-top: 50px;
 	padding-right: 30px;
 	display: block;	
     max-width: 600px;
     max-height: 400px;
-	/*width: 600px;*/
     overflow: hidden;
 	color: black;
 	text-shadow: 2px 0px white, -2px 0px white, 0px 2px white, 0px -2px white;

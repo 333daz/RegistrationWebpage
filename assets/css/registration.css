@@ -6,6 +6,7 @@
 	padding: 10px;
 	font-size: 20px;
 	color: white;
+    font-family: Copperplate;
 }
 
 td {
@@ -34,7 +35,7 @@ td {
 }
 
 .birthdayPicker {
-	width: 32.4%;
+	width: 32.3%;
     background-color: transparent;
 	height: 35px;
     color: white;
@@ -48,10 +49,11 @@ td {
     color: white;
     padding: 7px 20px;
     text-align: center;
-     background: linear-gradient(#646464, #0e0e0e);
+    background: linear-gradient(#646464, #0e0e0e);
     border-radius: 5px;
     letter-spacing: 1px;
     border-width: 0.1px;
     outline: 0px;
+    font-family: Copperplate;
 
 }

@@ -28,22 +28,19 @@ nav {
 #menuBar {
 	height: 100%;
 	float: left;
-	
-
 }
 
 .menuLinks {
-	font-size: 30px;
+	font-size: 24px;
 	color: #9c9c9c;
 	text-decoration: none;
 	line-height: 70px;
-	font-family: Copperplate;
+	font-family: Verdana;
 	padding: 16px 10px;
 }
 
 .menuLinks:hover {
 	color: white;
-	
 }
 
 footer {
