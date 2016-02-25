@@ -4,21 +4,22 @@
 	<title>Registration</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/commonStyles.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/registration.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	
 </head>
 <body>
 	<header>
 		<nav>
      		<img id="logoImage" src="../assets/images/logo.png">
-                			
+
         	<div id="menuBar">
 	         	<a href="../index.html" class="menuLinks">Home</a>
 	         	<a href="" class="menuLinks" style="color: white; border-bottom: 4px solid 	#cb2c31;">Register</a>
-	    	</div>
-            		
+	    	</div>	
         </nav>
 	</header>
 
-	<div align="middle">
+	<div >
 
 		<form id="registrationForm">
 			<table id="registrationTable" >
@@ -30,22 +31,22 @@
 
 				<tr>
 					<td>Email:</td>
-					<td colspan="2"><input type="email" placeholder="example@example.com" class="registrationTextFields" required></td>
+					<td colspan="2"><input type="email" placeholder="example@example.com" class="registrationTextFields" id="emailTextField" required></td>
 				</tr>
 
 				<tr>
 					<td>Gender:</td>
 					<td colspan="2">
-						<div class="genderRadio"><input type="radio" name="genderRadio" checked>Male</input></div>
-						<div class="genderRadio"><input type="radio" name="genderRadio">Female</input></div>
-						<div class="genderRadio"><input type="radio" name="genderRadio">Others</input>
+						<div class="radioButtons"><input type="radio" name="genderRadio" checked>Male</input></div>
+						<div class="radioButtons"><input type="radio" name="genderRadio">Female</input></div>
+						<div class="radioButtons"><input type="radio" name="genderRadio">Others</input>
 					</td>
 				</tr>
 
 				<tr>
 					<td>Date of birth</td>
 					<td colspan="2" style="padding-right: 0px">
-						<select class="birthdayPicker" required>
+						<select class="dropDownPicker" required>
 							<option value="0" selected="1">Day</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -79,7 +80,7 @@
 							<option value="30">30</option>
 							<option value="31">31</option>
                         </select>
-                        <select class="birthdayPicker" required>
+                        <select class="dropDownPicker" required>
                             <option value="0" selected="1">Month</option>
                             <option value="2">Feb</option>
                             <option value="3">Mar</option>
@@ -93,7 +94,7 @@
                             <option value="11">Nov</option>
                             <option value="12">Dec</option>
                         </select>
-                        <select class="birthdayPicker" required>
+                        <select class="dropDownPicker" required>
                             <option value="0" selected="1">Year</option>
                             <option value="2000">2000</option>
                             <option value="1999">1999</option>
@@ -157,9 +158,33 @@
 					<td>Phone:</td>
 					<td colspan="2"><input type="text" placeholder="+91-(phone)" class="registrationTextFields" required></td>
 				</tr>
+
+				<tr>
+					<td style="padding-bottom: 0px;">Are you accompanied with someone?</td>
+					<td colspan="2" style="padding-bottom: 0px;">
+						<div class="radioButtons"><input type="radio" name="accompanyCheckRadio" value="yes">Yes</input></div>
+						<div class="radioButtons"><input type="radio" name="accompanyCheckRadio" value="no" checked>No</input></div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="padding-bottom: 0px;">Are you having food?</td>
+					<td colspan="2" style="padding-bottom: 0px;">
+						<div class="radioButtons"><input type="radio" name="foodCheckRadio" value="yes">Yes</input></div>
+						<div class="radioButtons"><input type="radio" name="foodCheckRadio" value="no" checked>No</input></div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="padding-bottom: 0px;">Do you need accomodation?</td>
+					<td colspan="2" style="padding-bottom: 0px;">
+						<div class="radioButtons"><input type="radio" name="accomodationCheckRadio" value="yes">Yes</input></div>
+						<div class="radioButtons"><input type="radio" name="accomodationCheckRadio" value="no" checked>No</input></div>
+					</td>
+				</tr>
                 
                 <tr style="font-size: 15px;">
-					<td colspan="3"><input type="checkbox"></input> Accept our <a href="" style="color: white;">Terms and conditions</a></td>
+					<td colspan="3"><input type="checkbox" style="cursor: pointer;"></input> Accept our <a href="" style="color: white;">Terms and conditions</a></td>
 				</tr>
 
 				<tr>
@@ -167,14 +192,102 @@
 				</tr>
 
 			</table>
+            
+
+
+
+		<!-- Sub table 1 -->
+
+
+
+
+            <table class="sideFormTables" id="accompanyingTable" style="float: left;">
+
+            	<tr>
+            		<td colspan="3">Accompanying person details	<i  id="accomapnyClose" class="fa fa-times" style="color: white; float: right;" onclick="closeButtonPressed(this)"></i> </td>
+            	</tr>
+                <tr>
+					<td>Name:</td>
+					<td><input type="text" placeholder="First name" class="registrationTextFields" required></input></td>
+					<td><input type="text" placeholder="Last name" class="registrationTextFields" required></input></td>
+				</tr>
+
+				<tr>
+					<td>Gender:</td>
+					<td colspan="2">
+						<div class="radioButtons"><input type="radio" name="genderRadio" checked>Male</input></div>
+						<div class="radioButtons"><input type="radio" name="genderRadio">Female</input></div>
+						<div class="radioButtons"><input type="radio" name="genderRadio">Others</input>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Phone:</td>
+					<td colspan="2"><input type="text" placeholder="+91-(phone)" class="registrationTextFields" required></td>
+				</tr>
+            </table>
+
+
+            <!-- Sub table 2 -->
+
+
+
+            <table class="sideFormTables" id="foodDetailsTable" style="float: left;">
+
+            	<tr>
+            		<td colspan="2">Food details <i id="foodClose" class="fa fa-times" style="color: white; float: right;"></i> </td>
+            	</tr>
+                
+                <tr>
+                	<td>No of vegetarians:</td>
+                	<td><input type="number" class="registrationTextFields" min="0" required></td>
+                </tr>
+
+                <tr>
+                	<td>No of non-vegetarians:</td>
+                	<td><input type="number" class="registrationTextFields" min="0" required></td>
+                </tr>
+            </table>
+
+
+
+            <!-- Sub table 3 -->
+
+
+
+            <table class="sideFormTables" id="accomodationDetailsTable" style="float: left; margin-bottom: 10px">
+
+            	<tr>
+            		<td colspan="2" width="394px">Accomodation details <i id="accomodationClose" class="fa fa-times" style="color: white; float: right;"></i> </td>
+            	</tr>
+                
+                <tr>
+                	<td>Type of room:</td>
+                	<td>
+                		<select class="dropDownPicker" style="width: 100%; height: 35px; background-color: transparent;">
+                			<option>Type</option>
+                			<option>Single</option>
+                			<option>Double</option>
+                		</select>
+                	</td>
+                </tr>
+
+                <tr>
+                	<td>No of rooms:</td>
+                	<td><input type="number" class="registrationTextFields" min="0" required></td>
+                </tr>
+            </table>
+
 
 		</form>
 
 	</div>
 
+	
+
 	<footer>
 		<a href="">Contact us</a>
-	</footer>
-
+	</footer>	
 </body>
+<script type="text/javascript" src="../javascript/registration.js"></script>
 </html>

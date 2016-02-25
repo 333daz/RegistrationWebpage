@@ -1,13 +1,25 @@
 #registrationTable {
-	width: 600px;
-	margin: 30px 0px;
+    float: left;
+	width: 620px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 350px;
+    /*margin-right: 10px;*/
 	border-radius: 10px;
-	background-color: rgba(10,10,10,0.6);
-	padding: 10px;
-	font-size: 20px;
+	background-color: rgba(20,10,10,0.6);
+	padding: 5px;
+	font-size: 15px;
 	color: white;
     font-family: Copperplate;
+    z-index: -1;
+    transition: margin-left 1s;
 }
+#registrationTable:hover {
+    /*transform: translate(-250px);*/
+}
+
+
+
 
 td {
 	padding: 10px 5px;
@@ -24,18 +36,17 @@ td {
     font-size: 15px;
 }
 
-.genderRadio {
-    width: 32.5%;
+.radioButtons {
+    width: 33%;
     float: left;
-    
 }
 
 .addressFieldColumns {
     padding: 2px 5px;
 }
 
-.birthdayPicker {
-	width: 32.3%;
+.dropDownPicker {
+	width: 31.5%;
     background-color: transparent;
 	height: 35px;
     color: white;
@@ -55,5 +66,31 @@ td {
     border-width: 0.1px;
     outline: 0px;
     font-family: Copperplate;
+    cursor: pointer;
+}
+
+.sideFormTables {
+    /*position: relative;
+    right: -100px;*/
+    width: 380px;
+    height: 190px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgba(20,10,10,0.6);
+    padding: 5px;
+    font-size: 15px;
+    color: white;
+    font-family: Copperplate;
+    display: none;  
+    transition: top 1s;
+    animation-name: displaySideTableAnimation;
+    animation-duration: 2s;
+}
+
+@keyframes displaySideTableAnimation{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
 
 }
