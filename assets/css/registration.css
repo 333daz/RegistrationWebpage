@@ -1,0 +1,106 @@
+#registrationTable {
+    float: left;
+	width: 620px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 350px;
+	border-radius: 10px;
+	background-color: rgba(20,10,10,0.9);
+	padding: 5px;
+	font-size: 15px;
+	color: white;
+    font-family: Copperplate;
+    z-index: -1;
+    transition: margin-left 0.8s;
+}
+
+td {
+	padding: 10px 5px;
+}
+
+.registrationTextFields {
+	font-size: 15px;
+	height: 30px;
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+}
+
+.radioButtons {
+    width: 33%;
+    float: left;
+}
+
+.addressFieldColumns {
+    padding: 2px 5px;
+}
+
+.dropDownPicker {
+	width: 31.5%;
+    background-color: transparent;
+	height: 35px;
+    color: white;
+    font-size: 15px;
+}
+
+
+#submitButton {
+	font-size: 19px;
+    font-weight: bold;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+    background: linear-gradient(#646464, #0e0e0e);
+    border-radius: 5px;
+    letter-spacing: 1px;
+    border-width: 0.1px;
+    outline: 0px;
+    font-family: Copperplate;
+    cursor: pointer;
+}
+
+.sideFormDiv {
+    position: relative;
+    float: left;
+    width: 380px;
+    height: 200px;
+    background-color: rgba(20,10,10,0.9);
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: white;
+    font-family: Copperplate;
+    display: none;
+    transition: height 0.5s;
+}
+
+.sideFormHeadDiv {
+    position: relative;
+    left: 10px;
+    top: 10px;}
+
+.collapseButtonDiv {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.sideFormTables {
+    position: relative;
+    top: 10px;
+    width: 95%;
+    padding: 0px 5px;
+    transition: top 1s;
+    animation: displaySideTableAnimation 3s;
+}
+
+@keyframes displaySideTableAnimation{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
+
+}
