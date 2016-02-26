@@ -1,4 +1,6 @@
 var sideTableCount = 0;
+
+// TextField AddEventListener
 var textFields = document.getElementsByClassName("registrationTextFields");
 for(var i= 0; i < 10; i++) {
     if(textFields[i].id == "emailTextField") {
@@ -12,28 +14,24 @@ for(var i= 0; i < 10; i++) {
     }
 }
 
-var accompanyCheckRadios = document.getElementsByName("accompanyCheckRadio");
-for(var i= 0; i < accompanyCheckRadios.length; i++) {
-    accompanyCheckRadios[i].addEventListener("click", function() {accompanyCheckRadioSelected(this)});
+//collapseButton AddEventListener
+
+var collapseButtons = document.getElementsByName("collapseButton");
+for( var i = 0; i < collapseButtons.length ; i++) {
+    collapseButtons[i].addEventListener("click", function() {collapseButtonPressed(this)});
+    console.log(collapseButtons);
 }
 
-var foodCheckRadios = document.getElementsByName("foodCheckRadio");
-for(var i= 0; i < accompanyCheckRadios.length; i++) {
-    foodCheckRadios[i].addEventListener("click", function() {foodCheckRadioSelected(this)});
-}
+// side Form divs AddEventListener
 
-var accomodationCheckRadios = document.getElementsByName("accomodationCheckRadio");
-for(var i= 0; i < accompanyCheckRadios.length; i++) {
-    accomodationCheckRadios[i].addEventListener("click", function() {accomodationCheckRadioSelected(this)});
-}
-
-var closeButtons = document.getElementsByClassName("fa fa-times");
-for(var i= 0; i < closeButtons.length; i++) {
-    closeButtons[i].addEventListener("click", function() {closeButtonPressed(this)});
+var sideFormSwitchRadios = document.getElementsByClassName("sideFormSwitchRadios");
+var x = 0;
+for( var i = 0; i < sideFormSwitchRadios.length ; i++) {
+    sideFormSwitchRadios[i].addEventListener("click", function() {sideFormRadioSwitched(this)});
 }
 
 
-
+// Text field null check
 function textFieldOnBlur(textField) {
    
     if(textField.value == ""){
@@ -44,6 +42,7 @@ function textFieldOnBlur(textField) {
     }
 }
 
+// email validation
 function validateEmailTextField(emailTextField) {
     var emailRegEx = "^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$";
     if(emailTextField.value.match(emailRegEx)) {
@@ -54,6 +53,7 @@ function validateEmailTextField(emailTextField) {
     }
 }
 
+//Phone number validation
 function validatePhoneNumberTextField(phoneNumberTextField) {
     var phoneNumrRegEx = /^\d{10}$/;
     if(phoneNumberTextField.value.match(phoneNumrRegEx)) {
@@ -64,11 +64,25 @@ function validatePhoneNumberTextField(phoneNumberTextField) {
     }
 }
 
-function accompanyCheckRadioSelected(accompanyCheckRadio) {
-    if(accompanyCheckRadio.value == "yes") {
+
+
+//Side Form Radio Button Switched
+function sideFormRadioSwitched(radioButton) {
+    var sideDivID;
+    
+    if(radioButton.name == "accompanyCheckRadio")
+        sideDivID = "accompanyingFormDiv";
+    
+    else if(radioButton.name == "foodCheckRadio")
+        sideDivID = "foodDetailsFormDiv";
+            
+    else if(radioButton.name == "accomodationCheckRadio")
+        sideDivID = "accomodationDetailsFormDiv";
+    
+        if(radioButton.value == "yes") {
         document.getElementById("registrationTable").style.marginLeft = "150px";
-        if(!(document.getElementById("accompanyingTable").style.display == "block")) {
-            document.getElementById("accompanyingTable").style.display = "block";
+        if(!(document.getElementById(sideDivID).style.display == "block")) {
+            document.getElementById(sideDivID).style.display = "block";
             sideTableCount++;
         }
     }
@@ -76,58 +90,17 @@ function accompanyCheckRadioSelected(accompanyCheckRadio) {
     else {
         document.getElementById("registrationTable").style.marginLeft = "350px";
         
-        if(!(document.getElementById("accompanyingTable").style.display == "none")) {
-            document.getElementById("accompanyingTable").style.display = "none";
+        if(!(document.getElementById(sideDivID).style.display == "none")) {
+            document.getElementById(sideDivID).style.display = "none";
             sideTableCount--;
         }
     }
     setMainTablePosition();
+   
 }
 
-function foodCheckRadioSelected(foodCheckRadio) {
-    if(foodCheckRadio.value == "yes") {
-        document.getElementById("registrationTable").style.marginLeft = "150px";
-       
-         if(!(document.getElementById("foodDetailsTable").style.display == "block")) {
-            document.getElementById("foodDetailsTable").style.display = "block";
-            sideTableCount++;
-        }
-    }
-    
-    else {
-        document.getElementById("registrationTable").style.marginLeft = "350px";
-        
-        if(!(document.getElementById("foodDetailsTable").style.display == "none")) {
-            document.getElementById("foodDetailsTable").style.display = "none";
-            sideTableCount--;
-        }
-        
-    }
-    setMainTablePosition();
-}
 
-function accomodationCheckRadioSelected(accomodationCheckRadio) {
-    if(accomodationCheckRadio.value == "yes") {
-        document.getElementById("registrationTable").style.marginLeft = "150px";
-        
-        if(!(document.getElementById("accomodationDetailsTable").style.display == "block")) {
-            document.getElementById("accomodationDetailsTable").style.display = "block";
-            sideTableCount++;
-        }
-        document.getElementById("accomodationDetailsTable").style.display = "block";
-        
-    }
-    
-    else {
-        document.getElementById("registrationTable").style.marginLeft = "350px";
-        
-        if(!(document.getElementById("accomodationDetailsTable").style.display == "none")) {
-            document.getElementById("accomodationDetailsTable").style.display = "none";
-            sideTableCount--;
-        }
-    }
-    setMainTablePosition();
-}
+
 
 function setMainTablePosition() {
     
@@ -141,22 +114,34 @@ function setMainTablePosition() {
          
 }
 
-function closeButtonPressed(closeButton) {
+//expand or collpse side table
+
+function collapseButtonPressed(closeButton) {
     var parentTableID;
+    var parentDivID;
     if(closeButton.id == "accomapnyClose") {
         parentTableID = "accompanyingTable";
+        parentDivID = "accompanyingFormDiv";
     }
     
     else if(closeButton.id == "foodClose") {
         parentTableID = "foodDetailsTable";
+        parentDivID = "foodDetailsFormDiv";
     }
     
     else if(closeButton.id == "accomodationClose") {
         parentTableID = "accomodationDetailsTable";
+        parentDivID = "accomodationDetailsFormDiv";
     }
     if(!(document.getElementById(parentTableID).style.display == "none")) {
-    document.getElementById(parentTableID).style.display = "none";
-    sideTableCount--;
+        document.getElementById(parentTableID).style.display = "none";
+        document.getElementById(parentDivID).style.height = "40px";
+        closeButton.className = "fa fa-sort-desc";
     }
-    setMainTablePosition();
+    else {
+        document.getElementById(parentDivID).style.height = "200px"
+        document.getElementById(parentTableID).style.display = "block";
+        closeButton.className = "fa fa-sort-asc";
+    }
+    
 }

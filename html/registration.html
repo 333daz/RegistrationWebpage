@@ -162,24 +162,24 @@
 				<tr>
 					<td style="padding-bottom: 0px;">Are you accompanied with someone?</td>
 					<td colspan="2" style="padding-bottom: 0px;">
-						<div class="radioButtons"><input type="radio" name="accompanyCheckRadio" value="yes">Yes</input></div>
-						<div class="radioButtons"><input type="radio" name="accompanyCheckRadio" value="no" checked>No</input></div>
+						<div class="radioButtons"><input type="radio" class="sideFormSwitchRadios" name="accompanyCheckRadio" value="yes">Yes</input></div>
+						<div class="radioButtons"><input type="radio" class="sideFormSwitchRadios" name="accompanyCheckRadio" value="no" checked>No</input></div>
 					</td>
 				</tr>
 
 				<tr>
 					<td style="padding-bottom: 0px;">Are you having food?</td>
 					<td colspan="2" style="padding-bottom: 0px;">
-						<div class="radioButtons"><input type="radio" name="foodCheckRadio" value="yes">Yes</input></div>
-						<div class="radioButtons"><input type="radio" name="foodCheckRadio" value="no" checked>No</input></div>
+						<div class="radioButtons"><input type="radio" class="sideFormSwitchRadios" name="foodCheckRadio" value="yes">Yes</input></div>
+						<div class="radioButtons"><input type="radio" class="sideFormSwitchRadios" name="foodCheckRadio" value="no" checked>No</input></div>
 					</td>
 				</tr>
 
 				<tr>
 					<td style="padding-bottom: 0px;">Do you need accomodation?</td>
 					<td colspan="2" style="padding-bottom: 0px;">
-						<div class="radioButtons"><input type="radio" name="accomodationCheckRadio" value="yes">Yes</input></div>
-						<div class="radioButtons"><input type="radio" name="accomodationCheckRadio" value="no" checked>No</input></div>
+						<div class="radioButtons"><input type="radio" class="sideFormSwitchRadios" name="accomodationCheckRadio" value="yes">Yes</input></div>
+						<div class="radioButtons"><input type="radio" class="sideFormSwitchRadios" name="accomodationCheckRadio" value="no" checked>No</input></div>
 					</td>
 				</tr>
                 
@@ -192,92 +192,108 @@
 				</tr>
 
 			</table>
+
+
+
+
+
+			<!-- Sub table 1 -->
+
+
+
+			<div class="sideFormDiv" id="accompanyingFormDiv">
+				<div class="sideFormHeadDiv">Accompanying person details</div>
+				<div class="collapseButtonDiv"><i  id="accomapnyClose" class="fa fa-sort-asc"  name="collapseButton" style="color: white";></i></div>
+				
+				<table class="sideFormTables" id="accompanyingTable" style="float: left;">
+
+	                <tr>
+						<td>Name:</td>
+						<td><input type="text" placeholder="First name" class="registrationTextFields" required></input></td>
+						<td><input type="text" placeholder="Last name" class="registrationTextFields" required></input></td>
+					</tr>
+
+					<tr>
+						<td>Gender:</td>
+						<td colspan="2">
+							<div class="radioButtons"><input type="radio" name="genderRadio" checked>Male</input></div>
+							<div class="radioButtons"><input type="radio" name="genderRadio">Female</input></div>
+							<div class="radioButtons"><input type="radio" name="genderRadio">Others</input>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Phone:</td>
+						<td colspan="2"><input type="text" placeholder="+91-(phone)" class="registrationTextFields" required></td>
+					</tr>
+	            </table>
+
+	            <div style="clear: both;"></div>
+			</div>
             
 
-
-
-		<!-- Sub table 1 -->
-
-
-
-
-            <table class="sideFormTables" id="accompanyingTable" style="float: left;">
-
-            	<tr>
-            		<td colspan="3">Accompanying person details	<i  id="accomapnyClose" class="fa fa-times" style="color: white; float: right;" onclick="closeButtonPressed(this)"></i> </td>
-            	</tr>
-                <tr>
-					<td>Name:</td>
-					<td><input type="text" placeholder="First name" class="registrationTextFields" required></input></td>
-					<td><input type="text" placeholder="Last name" class="registrationTextFields" required></input></td>
-				</tr>
-
-				<tr>
-					<td>Gender:</td>
-					<td colspan="2">
-						<div class="radioButtons"><input type="radio" name="genderRadio" checked>Male</input></div>
-						<div class="radioButtons"><input type="radio" name="genderRadio">Female</input></div>
-						<div class="radioButtons"><input type="radio" name="genderRadio">Others</input>
-					</td>
-				</tr>
-
-				<tr>
-					<td>Phone:</td>
-					<td colspan="2"><input type="text" placeholder="+91-(phone)" class="registrationTextFields" required></td>
-				</tr>
-            </table>
+            
 
 
             <!-- Sub table 2 -->
 
 
 
-            <table class="sideFormTables" id="foodDetailsTable" style="float: left;">
+            <div class="sideFormDiv" id="foodDetailsFormDiv">
+				<div class="sideFormHeadDiv">Food details</div>
+				<div class="collapseButtonDiv"><i  id="foodClose" class="fa fa-sort-asc"  name="collapseButton" style="color: white;"></i></div>
+				
+				<table class="sideFormTables" id="foodDetailsTable" style="float: left;">
 
-            	<tr>
-            		<td colspan="2">Food details <i id="foodClose" class="fa fa-times" style="color: white; float: right;"></i> </td>
-            	</tr>
                 
-                <tr>
-                	<td>No of vegetarians:</td>
-                	<td><input type="number" class="registrationTextFields" min="0" required></td>
-                </tr>
+	                <tr>
+	                	<td>No of vegetarians:</td>
+	                	<td><input type="number" class="registrationTextFields" min="0" required></td>
+	                </tr>
 
-                <tr>
-                	<td>No of non-vegetarians:</td>
-                	<td><input type="number" class="registrationTextFields" min="0" required></td>
-                </tr>
-            </table>
+	                <tr>
+	                	<td>No of non-vegetarians:</td>
+	                	<td><input type="number" class="registrationTextFields" min="0" required></td>
+	                </tr>
+	            </table>
 
+				<div style="clear: both;"></div>
+			</div>
+            
+            
 
 
             <!-- Sub table 3 -->
 
 
+            <div class="sideFormDiv" id="accomodationDetailsFormDiv">
+				<div class="sideFormHeadDiv">Accomodation details</div>
+				<div class="collapseButtonDiv"><i id="accomodationClose" class="fa fa-sort-asc" name="collapseButton" style="color: white;"></i></div>
+				
+				<table class="sideFormTables" id="accomodationDetailsTable" style="float: left; margin-bottom: 10px">
+					
+					<tr>
+	                	<td>Type of room:</td>
+	                	<td>
+	                		<select class="dropDownPicker" style="width: 100%; background-color: transparent;">
+	                			<option>Type</option>
+	                			<option>Single</option>
+	                			<option>Double</option>
+	                		</select>
+	                	</td>
+	                </tr>
 
-            <table class="sideFormTables" id="accomodationDetailsTable" style="float: left; margin-bottom: 10px">
+	                <tr>
+	                	<td>No of rooms:</td>
+	                	<td><input type="number" class="registrationTextFields" min="0" required></td>
+	                </tr>
+	            </table>
 
-            	<tr>
-            		<td colspan="2" width="394px">Accomodation details <i id="accomodationClose" class="fa fa-times" style="color: white; float: right;"></i> </td>
-            	</tr>
-                
-                <tr>
-                	<td>Type of room:</td>
-                	<td>
-                		<select class="dropDownPicker" style="width: 100%; height: 35px; background-color: transparent;">
-                			<option>Type</option>
-                			<option>Single</option>
-                			<option>Double</option>
-                		</select>
-                	</td>
-                </tr>
+				<div style="clear: both;"></div>
+			</div>
 
-                <tr>
-                	<td>No of rooms:</td>
-                	<td><input type="number" class="registrationTextFields" min="0" required></td>
-                </tr>
-            </table>
 
+            
 
 		</form>
 

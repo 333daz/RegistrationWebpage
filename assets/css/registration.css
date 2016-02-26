@@ -4,22 +4,15 @@
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 350px;
-    /*margin-right: 10px;*/
 	border-radius: 10px;
-	background-color: rgba(20,10,10,0.6);
+	background-color: rgba(20,10,10,0.9);
 	padding: 5px;
 	font-size: 15px;
 	color: white;
     font-family: Copperplate;
     z-index: -1;
-    transition: margin-left 1s;
+    transition: margin-left 0.8s;
 }
-#registrationTable:hover {
-    /*transform: translate(-250px);*/
-}
-
-
-
 
 td {
 	padding: 10px 5px;
@@ -69,24 +62,41 @@ td {
     cursor: pointer;
 }
 
-.sideFormTables {
-    /*position: relative;
-    right: -100px;*/
+.sideFormDiv {
+    position: relative;
+    float: left;
     width: 380px;
-    height: 190px;
+    height: 200px;
+    background-color: rgba(20,10,10,0.9);
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-    background-color: rgba(20,10,10,0.6);
-    padding: 5px;
     font-size: 15px;
     color: white;
     font-family: Copperplate;
-    display: none;  
+    display: none;
+    transition: height 0.5s;
+}
+
+.sideFormHeadDiv {
+    position: relative;
+    left: 10px;
+    top: 10px;}
+
+.collapseButtonDiv {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.sideFormTables {
+    position: relative;
+    top: 10px;
+    width: 95%;
+    padding: 0px 5px;
     transition: top 1s;
-    animation-name: displaySideTableAnimation;
-    animation-duration: 2s;
+    animation: displaySideTableAnimation 3s;
 }
 
 @keyframes displaySideTableAnimation{
