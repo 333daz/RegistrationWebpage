@@ -164,7 +164,7 @@ function parseJSONObject(dropdownID, jsonURL) {
     request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       
-      var parsedObject = JSON.parse(xhttp.responseText);
+      var parsedObject = JSON.parse(request.responseText);
       var dropdown = document.getElementById(dropdownID);
       
       
