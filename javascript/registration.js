@@ -19,7 +19,6 @@ for(var i= 0; i < 10; i++) {
 var collapseButtons = document.getElementsByName("collapseButton");
 for( var i = 0; i < collapseButtons.length ; i++) {
     collapseButtons[i].addEventListener("click", function() {collapseButtonPressed(this)});
-    console.log(collapseButtons);
 }
 
 // side Form divs AddEventListener
@@ -142,6 +141,52 @@ function collapseButtonPressed(closeButton) {
         document.getElementById(parentDivID).style.height = "200px"
         document.getElementById(parentTableID).style.display = "block";
         closeButton.className = "fa fa-sort-asc";
+    }    
+}
+
+
+
+
+function loadDropDownData() {
+    var jsonURLs = ["../assets/json/dayList.json", "../assets/json/monthList.json", "../assets/json/yearList.json", "../assets/json/accomodationList.json"];
+    var dropdownIDs = ["dayPicker", "monthPicker", "yearPicker", "accomodationTypePicker"];
+    
+    for(var i = 0; i < 4; i++) {
+       parseJSONObject(dropdownIDs[i], jsonURLs[i]);
+    }
+}
+
+// parse JSON objects
+function parseJSONObject(dropdownID, jsonURL) {
+    var list;
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function() {
+    if (request.readyState == 4 && request.status == 200) {
+      
+      var parsedObject = JSON.parse(request.responseText);
+      var dropdown = document.getElementById(dropdownID);
+      
+      
+      populateDropdown(dropdown, parsedObject);
     }
     
+  };
+  request.open("GET", jsonURL, true);
+  request.send();
+  
+  return list;
+}
+
+//populate the dropdown
+
+function populateDropdown(dropdown, parsedObject) {
+    
+    for(var i = 0; i < parsedObject.list.length; i++) {
+          var option = parsedObject.list[i];
+          var optionElement = document.createElement("option");
+          optionElement.textContent = option;
+          optionElement.value = option;
+          dropdown.appendChild(optionElement);
+      }
 }
