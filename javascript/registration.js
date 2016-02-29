@@ -148,11 +148,11 @@ function collapseButtonPressed(closeButton) {
 
 
 function loadDropDownData() {
-    var jsonURLs = ["../assets/json/dayList.json", "../assets/json/monthList.json", "../assets/json/yearList.json"];
-    var dropdownIDS = ["dayPicker", "monthPicker", "yearPicker"];
+    var jsonURLs = ["../assets/json/dayList.json", "../assets/json/monthList.json", "../assets/json/yearList.json", "../assets/json/accomodationList.json"];
+    var dropdownIDs = ["dayPicker", "monthPicker", "yearPicker", "accomodationTypePicker"];
     
-    for(var i = 0; i < 3; i++) {
-       parseJSONObject(dropdownIDS[i], jsonURLs[i]);
+    for(var i = 0; i < 4; i++) {
+       parseJSONObject(dropdownIDs[i], jsonURLs[i]);
     }
 }
 
